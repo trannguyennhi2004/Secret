@@ -2772,38 +2772,221 @@ Tề Vương khẽ nghiêng đầu theo hướng giọng nói của cậu, rồi
 
     </main>
 
-    <!-- ==========================================
-         MODAL 1: GRADUATION WELCOME CARD
-         ========================================== -->
-    <div id="modalGraduationCard" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="relative w-full max-w-xl rounded-3xl border-2 border-amber-500/60 bg-gradient-to-b from-cosmic-800 via-cosmic-900 to-cosmic-950 p-6 sm:p-8 shadow-[0_0_50px_rgba(251,133,0,0.3)] overflow-hidden max-h-[90vh] overflow-y-auto">
-            <!-- Spinning Eldritch Ring Decoration -->
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 border border-amber-400/50 flex items-center justify-center eldritch-portal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" aria-hidden="true" class="lucide lucide-graduation-cap w-8 h-8 text-amber-300"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
-            </div>
+    
+<!-- ==========================================
+     MODAL 1: GRADUATION WELCOME CARD
+     ========================================== -->
+<div
+    id="modalGraduationCard"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+>
+    <div
+        class="relative w-full max-w-xl rounded-3xl border-2 border-amber-500/60 bg-gradient-to-b from-cosmic-800 via-cosmic-900 to-cosmic-950 p-6 sm:p-8 shadow-[0_0_50px_rgba(251,133,0,0.3)] overflow-hidden max-h-[90vh] overflow-y-auto"
+    >
+        <!-- Spinning Eldritch Ring Decoration -->
+        <div
+            class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 border border-amber-400/50 flex items-center justify-center eldritch-portal"
+        >
+            <i data-lucide="graduation-cap" class="w-8 h-8 text-amber-300"></i>
+        </div>
 
-            <div class="text-center space-y-2 mb-6">
-                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[11px] font-semibold uppercase tracking-widest">
-                    ✨ Tín Hiệu Đa Vũ Trụ Gửi Đến Bạn Iu ✨
+        <!-- Graduation Welcome Heading -->
+        <div class="text-center space-y-2 mb-6">
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[11px] font-semibold uppercase tracking-widest"
+            >
+                ✨ Tín Hiệu Đa Vũ Trụ Gửi Đến Bạn Iu ✨
+            </span>
+
+            <h2
+                id="cardModalTitle"
+                class="font-display text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400 pt-1"
+            >
+                Chúc Mừng Tốt Nghiệp, Lê Kim Như Tiền!
+            </h2>
+        </div>
+
+        <!-- Graduation Message: Populated by JS -->
+        <div
+            id="cardModalBody"
+            class="space-y-3.5 text-sm sm:text-base text-slate-200 leading-relaxed bg-cosmic-950/60 border border-slate-800/90 rounded-2xl p-5 font-serif"
+        >
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- ======================================
+             READING GUIDE: COLLAPSIBLE SECTION
+             ====================================== -->
+        <div
+            class="mt-5 rounded-2xl border border-amber-400/25 bg-cosmic-950/50 overflow-hidden"
+        >
+            <button
+                type="button"
+                onclick="toggleReadingGuide()"
+                aria-expanded="false"
+                aria-controls="readingGuideContent"
+                id="readingGuideToggle"
+                class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-amber-500/5 transition-colors"
+            >
+                <span class="flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 shrink-0 rounded-xl bg-amber-500/10 border border-amber-400/20 flex items-center justify-center"
+                    >
+                        <i data-lucide="book-open" class="w-5 h-5 text-amber-300"></i>
+                    </span>
+
+                    <span>
+                        <span class="block text-sm sm:text-base font-bold text-amber-200">
+                            Cẩm Nang Du Hành
+                        </span>
+                        <span class="block text-xs text-slate-400 mt-1">
+                            Một vài lời nhắn trước khi bắt đầu đọc ♡
+                        </span>
+                    </span>
                 </span>
-                <h2 id="cardModalTitle" class="font-display text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400 pt-1">HAPPY GRADUATION, MY BFF! 🎓✨</h2>
-            </div>
 
-            <div id="cardModalBody" class="space-y-3.5 text-sm sm:text-base text-slate-200 leading-relaxed bg-cosmic-950/60 border border-slate-800/90 rounded-2xl p-5 font-serif"><p>Gửi Tiền, vậy là một hành trình lớn đã khép lại để mở ra cả một đa vũ trụ rực rỡ phía trước!</p><p>Không biết cưng còn nhớ không, tầm 2-3 năm trước tụi mình từng say sưa bàn về thế giới phép thuật của Doctor Strange, về vũ trụ, những điều kỳ bí và cả những bộ phim trinh thám cuốn hút. Hồi đó mình có kể cho Tiền nghe về một bộ truyện xuyên nhanh qua nhiều thế giới cực kỳ thú vị — trong đó có một thế giới huyền học rất giống với vibe của Doctor Strange — và từng hứa khi nào dịch được sẽ gửi cho bạn xem.</p><p>Nhân cột mốc tốt nghiệp đáng nhớ này, mình quyết định giữ lời hứa bằng cách tạo riêng cho Tiền một 'Bản Đồ Vượt Ải Đa Vũ Trụ'. Hoàn thành xong ải nào, phong ấn của ải tiếp theo sẽ tự động mở ra!</p><p>Chúc cô gái của tôi luôn giữ vững ngọn lửa sáng tạo, sự nhạy bén và tần số năng lượng tuyệt vời. Dù bước vào bất kỳ 'thế giới' nào tiếp theo của cuộc đời, chúc cưng luôn làm chủ cuộc chơi!</p></div>
+                <i
+                    id="readingGuideChevron"
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-amber-300 shrink-0 transition-transform duration-300"
+                ></i>
+            </button>
 
-            <div class="mt-5 flex items-center justify-between text-xs text-amber-300/90 italic px-2">
-                <span>Mã hồ sơ: #MULTIVERSE-2026</span>
-                <span id="cardModalSign">— Người bạn cùng tần số vũ trụ của Tiền —</span>
-            </div>
+            <!-- Guide Content -->
+            <div id="readingGuideContent" class="hidden px-4 pb-4">
+                <div
+                    class="border-t border-amber-400/15 pt-4 space-y-4 text-sm text-slate-300 leading-relaxed"
+                >
+                    <!-- Device Recommendation -->
+                    <div class="flex gap-3">
+                        <i
+                            data-lucide="monitor"
+                            class="w-5 h-5 text-amber-300 shrink-0 mt-0.5"
+                        ></i>
 
-            <div class="mt-6 text-center">
-                <button onclick="closeGraduationCard()" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-bold text-sm sm:text-base shadow-xl shadow-amber-500/25 hover:scale-[1.02] transition-transform inline-flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" class="lucide lucide-sparkles w-5 h-5"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
-                    <span>Bước Vào Đa Vũ Trụ Ngay</span>
-                </button>
+                        <p>
+                            <strong class="text-amber-200">
+                                Thiết bị lý tưởng:
+                            </strong>
+                            Ưu tiên máy tính hoặc laptop để có giao diện rộng rãi,
+                            đẹp mắt và dễ đọc hơn. Nếu dùng điện thoại, bạn vẫn
+                            đọc bình thường; có thể thử bật chế độ
+                            <em>Trang web cho máy tính</em> trên trình duyệt nhé.
+                        </p>
+                    </div>
+
+                    <!-- Reading Progress -->
+                    <div class="flex gap-3">
+                        <i
+                            data-lucide="bookmark"
+                            class="w-5 h-5 text-amber-300 shrink-0 mt-0.5"
+                        ></i>
+
+                        <p>
+                            <strong class="text-amber-200">
+                                Lưu tiến độ:
+                            </strong>
+                            Hãy cố gắng sử dụng cùng một thiết bị và trình duyệt
+                            để việc lưu chương đang đọc ổn định hơn. Tiến độ có
+                            thể không đồng bộ khi đổi thiết bị hoặc xóa dữ liệu
+                            trình duyệt.
+                        </p>
+                    </div>
+
+                    <!-- Add Shortcut -->
+                    <div class="flex gap-3">
+                        <i
+                            data-lucide="app-window"
+                            class="w-5 h-5 text-amber-300 shrink-0 mt-0.5"
+                        ></i>
+
+                        <p>
+                            <strong class="text-amber-200">
+                                Lối tắt bí mật:
+                            </strong>
+                            Hãy thêm trang web vào dấu trang trên máy tính
+                            hoặc màn hình chính điện thoại để lần sau quay lại
+                            góc đọc truyện này nhanh hơn nhé.
+                        </p>
+                    </div>
+
+                    <!-- Chapter Updates -->
+                    <div class="flex gap-3">
+                        <i
+                            data-lucide="moon-star"
+                            class="w-5 h-5 text-amber-300 shrink-0 mt-0.5"
+                        ></i>
+
+                        <p>
+                            <strong class="text-amber-200">
+                                Tín hiệu chương mới:
+                            </strong>
+                            Lịch cập nhật phụ thuộc vào tâm trạng và độ siêng
+                            năng của tác giả, nên không cố định đâu nha =)))
+                            Nếu chờ mãi vẫn chưa thấy chương tiếp theo,
+                            cứ sang Messenger hối tác giả nhé!
+
+                            <span class="block mt-1 text-amber-300/80 italic">
+                                Hối thì cứ hối, còn ra chương lúc nào là quyền
+                                của tác giả nha. 💅
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- Closing Note -->
+                    <p class="text-center text-xs text-slate-500 italic pt-1">
+                        Chúc bạn có một chuyến du hành qua những trang truyện
+                        thật vui vẻ ✨
+                    </p>
+                </div>
             </div>
         </div>
+
+        <!-- Modal Signature -->
+        <div
+            class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-amber-300/90 italic px-2"
+        >
+            <span>Mã hồ sơ: #MULTIVERSE-2026</span>
+            <span id="cardModalSign">
+                — Người bạn đồng hành đa vũ trụ —
+            </span>
+        </div>
+
+        <!-- Enter Button -->
+        <div class="mt-6 text-center">
+            <button
+                type="button"
+                onclick="closeGraduationCard()"
+                class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-bold text-sm sm:text-base shadow-xl shadow-amber-500/25 hover:scale-[1.02] transition-transform inline-flex items-center justify-center gap-2"
+            >
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                <span>Bước Vào Đa Vũ Trụ Ngay</span>
+            </button>
+        </div>
     </div>
+</div>
+
+<!-- ==========================================
+     READING GUIDE TOGGLE FUNCTION
+     ========================================== -->
+<script>
+function toggleReadingGuide() {
+    const content = document.getElementById('readingGuideContent');
+    const toggle = document.getElementById('readingGuideToggle');
+    const chevron = document.getElementById('readingGuideChevron');
+
+    if (!content || !toggle || !chevron) return;
+
+    const isHidden = content.classList.contains('hidden');
+
+    content.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(isHidden));
+
+    chevron.style.transform = isHidden
+        ? 'rotate(180deg)'
+        : 'rotate(0deg)';
+}
+</script>
 
     <!-- ==========================================
          MODAL 2: WORLD DOSSIER / TEASER MODAL
