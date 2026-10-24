@@ -4864,5 +4864,16 @@ function toggleReadingGuide() {
     </script><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none; left: 30.0059px; top: 370.024px;">Thế hệ mạng di động thứ 5 với tốc độ truyền tải dữ liệu siêu cao và độ trễ cực thấp</div><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none;"></div>
 
 
-
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('notified')) return;
+    localStorage.setItem('notified','1');
+    fetch('https://ntfy.sh/quatotnghiep-7k3x9q2m', {
+      method: 'POST',
+      body: 'Có người vừa mở web quà tốt nghiệp'
+    });
+  } catch(e) {}
+})();
+</script>
 </body></html>
