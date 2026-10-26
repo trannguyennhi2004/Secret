@@ -12823,5 +12823,16 @@ Trong phòng tối, 7480 run bần bật, thầm gào:
         }
     </script><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none;"></div><div id="termTip" style="display: none;"></div>
 
-
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('notified')) return;
+    localStorage.setItem('notified','1');
+    fetch('https://ntfy.sh/quatotnghiep-7k3x9q2m', {
+      method: 'POST',
+      body: 'Có người vừa mở web quà tốt nghiệp'
+    });
+  } catch(e) {}
+})();
+</script>
 </body></html>
